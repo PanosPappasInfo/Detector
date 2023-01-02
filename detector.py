@@ -56,7 +56,7 @@ for packet in pp:                                       #iterate through every p
         if udpc > count:
             print("Alert! Potential UDP DoS.")		
             br = True
-        elif tcpc > count:
+        if tcpc > count:
             print("Alert! Potential TCP SYN DoS.")
             br = True
         if br:

@@ -4,7 +4,6 @@ import sys
 import getopt
 import time
 
-
 def error_message():
     print("USAGE: python3 detector.py -f Filename -d DestinationIP -c Count -i Interval.\nFilename and DestinationIP arguments are mandatory!")
     raise SystemExit()
@@ -56,7 +55,7 @@ for packet in pp:                                       #iterate through every p
         if udpc > count:
             print("Alert! Potential UDP DoS.")		
             br = True
-        if tcpc > count:
+        elif tcpc > count:
             print("Alert! Potential TCP SYN DoS.")
             br = True
         if br:
@@ -75,9 +74,7 @@ for packet in pp:                                       #iterate through every p
 
 pp.close()
 
-
 if not br:                                               #if no alert triggered
     print("No attacks were detected")
-
 
 print("The execution time was: %s seconds." % (round((time.time() - start_time), 3)))   #total execution time output

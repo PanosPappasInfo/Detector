@@ -13,6 +13,26 @@ Due to the testing and evaluation phase included in the thesis, the Detector inc
 
 The function used to load the pcap file in the memory is called PcapReader (line 47). It is used over rdpcap, as the latter loads the whole pcap file on the memory, which can be really demanding in memory resources. On the contrary, PcapReader only loads one packet at a time on the memory, in order to save resources. 
 
-The snapshots provided next, constitute some of the Detector's use cases when used on the testing pcap files provided in this repository.
+The snapshots provided next, constitute some of the Detector's use cases when used on the testing pcap files provided in this repository. 
+
+Note that the environment in which the experiments were carried out is a Linux Ubuntu OS through an Oracle VirtualBox on a Windows host. In order for the Detector to be used, the .py file as well as the pcap files have to be downloaded, unzipped and put together into a specific directory. The current directory has to be the one where the files are, plus the Python3 command shows that this is the Python version used to test the Detector.
+
+The first use case is the help option provided. It indicates the correct way to use the Detector from the command line.
 
 ![alt text](https://github.com/PanosPappasInfo/Detector/blob/main/help.png?raw=true)
+
+The second snapshot is from the testing of the normal traffic pcap in two scenarios. The first includes the default limit values while the second one has the interval and the count values altered. The result of the normal traffic seems to throw no alerts, whereas the alternate variables on the second execution lead to a UDP Flood alert.
+
+![alt text](https://github.com/PanosPappasInfo/Detector/blob/main/normal_traffic_scenarios.png?raw=true)
+
+The next one is from the hping3udp pcap file which includes a UDP Flood attack. It is clear that the attack is detected from the tool and the alert is thrown accordingly.
+
+![alt text](https://github.com/PanosPappasInfo/Detector/blob/main/udp.png?raw=true)
+
+Next a TCP SYN attack is given as input from the hping3tcp pcap file. Again the tool detects the attack and alerts the user about it.
+
+![alt text](https://github.com/PanosPappasInfo/Detector/blob/main/tcp.png?raw=true)
+
+The last capture is from a wrong use of the Detector, when an attempt to pass just one argument leads to a prompt.
+
+![alt text](https://github.com/PanosPappasInfo/Detector/blob/main/error.png?raw=true)

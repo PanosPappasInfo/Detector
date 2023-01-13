@@ -14,3 +14,5 @@ Due to the testing and evaluation phase included in the thesis, the Detector inc
 The function used to load the pcap file in the memory is called PcapReader (line 47). It is used over rdpcap, as the latter loads the whole pcap file on the memory, which can be really demanding in memory resources. On the contrary, PcapReader only loads one packet at a time on the memory, in order to save resources. 
 
 The snapshots provided next, constitute some of the Detector's use cases when used on the testing pcap files provided in this repository.
+
+![alt text](https://github.com/PanosPappasInfo/Detector/blob/main/help.png?raw=true)
